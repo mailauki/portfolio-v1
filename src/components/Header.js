@@ -1,7 +1,6 @@
 import { useState } from 'react';
-// import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { List, ListItem, ListItemButton, ListItemText, Drawer, Toolbar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -26,8 +25,6 @@ function Header() {
   const handleDrawerClose = () => {
     setOpen(false)
   }
-
-  // const history = useHistory()
 
   return (
     <div className="Header">
