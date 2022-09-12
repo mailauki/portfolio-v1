@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { List, ListItem, ListItemButton, ListItemText, Drawer, Toolbar, IconButton, Typography } from '@mui/material';
+import { List, ListItem, ListItemButton, ListItemText, Drawer, Toolbar, IconButton, Typography, Divider, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -9,6 +9,7 @@ const drawerWidth = 240
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
+  height: '64px',
   alignItems: 'center',
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
@@ -27,8 +28,8 @@ function Header() {
   }
 
   return (
-    <div className="Header">
-      <Toolbar>
+    <div>
+      <Box className="Header">
         <Typography 
           variant="h6" 
           noWrap  
@@ -47,7 +48,7 @@ function Header() {
         >
           <MenuIcon />
         </IconButton>
-      </Toolbar>
+      </Box>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -69,6 +70,7 @@ function Header() {
             <ChevronRightIcon />
           </IconButton>
         </DrawerHeader>
+        <Divider />
         <List>
           <ListItem disablePadding>
             <ListItemButton compontent={Link} to="/">

@@ -1,4 +1,5 @@
 import ProjectCard from '../components/ProjectCard';
+import { Box, Typography } from '@mui/material';
 import CatTubeProjectImage from '../images/cat-tube.png';
 import PicWorthyProjectImage from '../images/pic-worthy.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,13 +10,14 @@ import { Scrollbar, Mousewheel } from "swiper";
 function Projects() {
   return (
     <div className="Page">
-      <h1>Projects</h1>
+      <Box sx={{ position: "absolute", top: "60px", width: "calc(100% - 40px)", alignItems: "center", textAlign: "center", zIndex: 1 }}>
+        <Typography variant="h3">Projects</Typography>
+      </Box>
+      {/* <Typography variant="h3" sx={{ position: "absolute", top: "60px" }}>Projects</Typography> */}
       <Swiper
+        className="Swiper"
         direction={"vertical"}
-        scrollbar={{
-          // hide: true
-          draggable: true
-        }}
+        scrollbar
         mousewheel={true}
         modules={[Scrollbar, Mousewheel]}
       >
