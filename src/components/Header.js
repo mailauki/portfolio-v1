@@ -87,6 +87,7 @@ function Header() {
               <ListItemText primary="About Me" />
             </ListItemButton>
           </ListItem>
+          <Divider />
         </List>
       </Drawer>
     </div>
