@@ -6,7 +6,7 @@ import { Scrollbar, Mousewheel } from "swiper";
 
 function Home() {
   return (
-    <div>
+    <div className="Page">
       <Swiper
         direction={"vertical"}
         scrollbar={{
