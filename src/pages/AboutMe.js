@@ -1,11 +1,13 @@
+// import { Link } from 'react-router-dom';
 import Logo from '../images/JE-logo.png';
-import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Typography, Avatar, Divider, SvgIcon } from '@mui/material';
+import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Typography, Avatar, Divider, Link } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import HomeIcon from '@mui/icons-material/Home';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import HouseIcon from '@mui/icons-material/House';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
+import DevIcon from '@mui/icons-material/LogoDev';
 
 let theme = createTheme()
 theme = responsiveFontSizes(theme)
@@ -30,46 +32,109 @@ function AboutMe() {
           </div>
           <List>
             <ListItem>
-              <ListItemText primary={<Typography variant="h6">Contact</Typography>} />
+              <ListItemText 
+                primary={<Typography variant="h6">Contact</Typography>} 
+              />
             </ListItem>
             <Divider />
             <ListItem>
               <ListItemIcon>
                 <EmailIcon />
               </ListItemIcon>
-              <ListItemText primary="Email" secondary="juliemevans17@gmail.com" />
+              <ListItemText 
+                primary="Email" 
+                secondary={
+                  <Link 
+                    href="mailto:juliemevans17@gmail.com" 
+                    target="_blank"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    juliemevans17@gmail.com
+                  </Link>
+                } 
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <PhoneIcon />
+                <PhoneIphoneIcon />
               </ListItemIcon>
-              <ListItemText primary="Phone" secondary="(713) 447 - 0724" />
+              <ListItemText 
+                primary="Phone"  
+                secondary={
+                  <Link 
+                    href="tel:7134470724" 
+                    target="_blank"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    (713) 447 - 0724
+                  </Link>
+                } 
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <HomeIcon />
+                <HouseIcon />
               </ListItemIcon>
-              <ListItemText primary="Address" secondary="Kilgore, TX 75442" />
+              <ListItemText 
+                primary="Address" 
+                secondary="Kilgore, TX 75442" 
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <SvgIcon viewBox="0 0 448 512">
-                  <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-                </SvgIcon>
+                <LinkedInIcon />
               </ListItemIcon>
-              <ListItemText primary="LinkedIn" secondary="https://linkedin.com/in/julie-evans-38144180" />
+              <ListItemText 
+                primary="LinkedIn" 
+                secondary={
+                  <Link 
+                    href="https://linkedin.com/in/julie-evans-38144180" 
+                    target="_blank"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    https://linkedin.com/in/julie-evans-38144180
+                  </Link>
+                } 
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
                 <GitHubIcon />
               </ListItemIcon>
-              <ListItemText primary="GitHub" secondary="https://github.com/mailauki" />
+              <ListItemText 
+                primary="GitHub" 
+                secondary={
+                  <Link 
+                    href="https://github.com/mailauki" 
+                    target="_blank"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    https://github.com/mailauki
+                  </Link>
+                } 
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
-                <RssFeedIcon />
+                <DevIcon />
               </ListItemIcon>
-              <ListItemText primary="Blog" secondary="https://dev.to/mailauki" />
+              <ListItemText 
+                primary="Blog" 
+                secondary={
+                  <Link 
+                    href="https://dev.to/mailauki" 
+                    target="_blank"
+                    color="inherit"
+                    underline="hover"
+                  >
+                    https://dev.to/mailauki
+                  </Link>
+                } 
+              />
             </ListItem>
           </List>
         </div>
