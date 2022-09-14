@@ -1,12 +1,12 @@
-import { Card, CardActions, CardContent, CardMedia, Button, IconButton, Typography } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';import OpenIcon from '@mui/icons-material/OpenInNew';
 
 function ProjectCard({ title, description, image, githubLink, deployLink }) {
   return (
-    <Card sx={{ maxWidth: 345, textAlign: "left" }}>
+    <Card sx={{ maxWidth: 340, textAlign: "left" }}>
       <CardMedia
         component="img"
-        height="240"
+        height="140"
         image={image}
         alt={title}
       />
@@ -19,16 +19,18 @@ function ProjectCard({ title, description, image, githubLink, deployLink }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton 
+        <Button 
           aria-label="github" 
           component="a" href={githubLink} target="_blank"
+          startIcon={<GitHubIcon />}
         >
-          <GitHubIcon />
-        </IconButton>
+          GitHub
+        </Button>
         <Button 
           size="small" 
           aria-label="visit-site" 
           component="a" href={deployLink} target="_blank"
+          startIcon={<OpenIcon />}
         >Visit Site</Button>
       </CardActions>
     </Card>

@@ -10,12 +10,11 @@ import { Scrollbar, Mousewheel } from "swiper";
 function Projects() {
   return (
     <div className="Page">
-      <Box sx={{ position: "absolute", top: "60px", width: "calc(100% - 40px)", alignItems: "center", textAlign: "center", zIndex: 1 }}>
+      {/* <Box sx={{ position: "absolute", top: "64px", height: "40px", width: "calc(100% - 40px)", alignItems: "center", textAlign: "center", zIndex: 1 }}> */}
         <Typography variant="h3">Projects</Typography>
-      </Box>
-      {/* <Typography variant="h3" sx={{ position: "absolute", top: "60px" }}>Projects</Typography> */}
+      {/* </Box> */}
       <Swiper
-        className="Swiper"
+        className="ProjectsSwiper"
         direction={"vertical"}
         scrollbar
         mousewheel={true}
