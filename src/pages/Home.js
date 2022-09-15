@@ -9,6 +9,7 @@ function Home() {
       <Swiper
         className="Swiper"
         direction={"vertical"}
+        slidesPerView="auto"
         scrollbar
         mousewheel={true}
         modules={[Scrollbar, Mousewheel]}

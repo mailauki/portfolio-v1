@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';import OpenIcon from '@mui/i
 
 function ProjectCard({ title, description, image, githubLink, deployLink }) {
   return (
-    <Card sx={{ maxWidth: 340, textAlign: "left" }}>
+    <Card sx={{ maxWidth: 340, minHeight: "fit-content", textAlign: "left" }}>
       <CardMedia
         component="img"
         height="140"

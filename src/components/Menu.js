@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Divider, Switch, Link as Anchor } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -24,20 +24,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }))
 
 function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
-  const [checked, setChecked] = useState(['dark'])
-  
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-  
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-  
-    setChecked(newChecked);
-  }
+  let location = useLocation()
 
   return (
     <Drawer
@@ -66,34 +53,65 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
           <ChevronRightIcon />
         </IconButton>
       </DrawerHeader>
-      {/* <Divider /> */}
 
       <List>
         <ListItem disablePadding>
-          <ListItemButton compontent={Link} to="/">
-            <ListItemIcon>
+          <ListItemButton 
+            compontent={NavLink} 
+            to="/" 
+            sx={() => ({
+              color: location.pathname === "/" ? "primary.main" : ""
+            })}
+          >
+            <ListItemIcon
+            sx={() => ({
+              color: location.pathname === "/" ? "primary.main" : ""
+            })}
+            >
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton compontent={Link} to="/projects">
-            <ListItemIcon>
+          <ListItemButton 
+            compontent={NavLink} 
+            to="/projects"
+            sx={() => ({
+              color: location.pathname === "/projects" ? "primary.main" : ""
+            })}
+          >
+            <ListItemIcon
+              sx={() => ({
+                color: location.pathname === "/projects" ? "primary.main" : ""
+              })}
+            >
               <WebIcon />
             </ListItemIcon>
             <ListItemText primary="Projects" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton compontent={Link} to="/about-me">
-            <ListItemIcon>
+          <ListItemButton 
+            compontent={NavLink} 
+            to="/about-me"
+            sx={() => ({
+              color: location.pathname === "/about-me" ? "primary.main" : ""
+            })}
+          >
+            <ListItemIcon
+              sx={() => ({
+                color: location.pathname === "/about-me" ? "primary.main" : ""
+              })}
+            >
               <AccountCircleIcon />
             </ListItemIcon>
             <ListItemText primary="About Me" />
           </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem>
           <ListItemIcon>
             <NightlightIcon />
@@ -101,8 +119,6 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
           <ListItemText primary="Dark Mode" />
           <Switch
             edge="end"
-            // onChange={handleToggle('dark')}
-            // checked={checked.indexOf('dark') !== -1}
             onChange={handleDarkMode}
             checked={darkMode}
             inputProps={{
@@ -110,6 +126,7 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
             }}
           />
         </ListItem>
+
         <Divider />
       </List>
 
@@ -121,37 +138,6 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
           bottom: 0,
         }}
       >
-        <Divider />
-        <ListItem sx={{ justifyContent: "center" }}>
-            <IconButton 
-              component={Anchor}  
-              href="mailto:juliemevans17@gmail.com" 
-              target="_blank"
-            >
-              <EmailIcon />
-            </IconButton>
-            <IconButton 
-              component={Anchor}  
-              href="https://linkedin.com/in/julie-evans-38144180" 
-              target="_blank"
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton 
-              component={Anchor}  
-              href="https://github.com/mailauki" 
-              target="_blank"
-            >
-              <GitHubIcon />
-            </IconButton>
-            <IconButton 
-              component={Anchor}  
-              href="https://dev.to/mailauki" 
-              target="_blank"
-            >
-              <DevIcon />
-            </IconButton>
-        </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
           <ButtonGroup variant="text">
             <Button 
