@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Divider, Switch, Link as Anchor } from '@mui/material';
@@ -142,21 +141,21 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
           <ButtonGroup variant="text">
             <Button 
               component={Anchor}  
-              href="https://dev.to/mailauki" 
+              href="mailto:juliemevans17@gmail.com" 
               target="_blank"
             >
               <EmailIcon />
             </Button>
             <Button 
               component={Anchor}  
-              href="https://dev.to/mailauki" 
+              href="https://linkedin.com/in/julie-evans-38144180" 
               target="_blank"
             >
               <LinkedInIcon />
             </Button>
             <Button 
               component={Anchor}  
-              href="https://dev.to/mailauki" 
+              href="https://github.com/mailauki" 
             >
               <GitHubIcon />
             </Button>

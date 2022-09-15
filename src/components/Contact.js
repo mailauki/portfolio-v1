@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemIcon, ListItemText, Typography, Divider, Link } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText, Typography, Divider, Link as Anchor } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import HouseIcon from '@mui/icons-material/House';
@@ -22,14 +22,14 @@ function Contact() {
         <ListItemText 
           primary="Email" 
           secondary={
-            <Link 
+            <Anchor 
               href="mailto:juliemevans17@gmail.com" 
               target="_blank"
               color="inherit"
               underline="hover"
             >
               juliemevans17@gmail.com
-            </Link>
+            </Anchor>
           } 
         />
       </ListItem>
@@ -40,14 +40,14 @@ function Contact() {
         <ListItemText 
           primary="Phone"  
           secondary={
-            <Link 
+            <Anchor 
               href="tel:7134470724" 
               target="_blank"
               color="inherit"
               underline="hover"
             >
               (713) 447 - 0724
-            </Link>
+            </Anchor>
           } 
         />
       </ListItem>
@@ -67,14 +67,14 @@ function Contact() {
         <ListItemText 
           primary="LinkedIn" 
           secondary={
-            <Link 
+            <Anchor 
               href="https://linkedin.com/in/julie-evans-38144180" 
               target="_blank"
               color="inherit"
               underline="hover"
             >
               https://linkedin.com/in/julie-evans-38144180
-            </Link>
+            </Anchor>
           } 
         />
       </ListItem>
@@ -85,14 +85,14 @@ function Contact() {
         <ListItemText 
           primary="GitHub" 
           secondary={
-            <Link 
+            <Anchor 
               href="https://github.com/mailauki" 
               target="_blank"
               color="inherit"
               underline="hover"
             >
               https://github.com/mailauki
-            </Link>
+            </Anchor>
           } 
         />
       </ListItem>
@@ -103,14 +103,14 @@ function Contact() {
         <ListItemText 
           primary="Blog" 
           secondary={
-            <Link 
+            <Anchor 
               href="https://dev.to/mailauki" 
               target="_blank"
               color="inherit"
               underline="hover"
             >
               https://dev.to/mailauki
-            </Link>
+            </Anchor>
           } 
         />
       </ListItem>
