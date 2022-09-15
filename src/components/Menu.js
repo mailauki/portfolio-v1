@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Divider, Switch, Link as Anchor } from '@mui/material';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Link as Anchor } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Web';
@@ -9,7 +9,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DevIcon from '@mui/icons-material/LogoDev';
-import NightlightIcon from '@mui/icons-material/Nightlight';
 
 const drawerWidth = 240
 
@@ -22,7 +21,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }))
 
-function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
+function Menu({ open, handleDrawerClose }) {
   let location = useLocation()
 
   return (
@@ -33,7 +32,7 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-        },
+        }
       }}
       variant="persistent"
       anchor="right"
@@ -108,25 +107,6 @@ function Menu({ open, handleDrawerClose, darkMode, handleDarkMode }) {
             <ListItemText primary="About Me" />
           </ListItemButton>
         </ListItem>
-
-        <Divider />
-
-        <ListItem>
-          <ListItemIcon>
-            <NightlightIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dark Mode" />
-          <Switch
-            edge="end"
-            onChange={handleDarkMode}
-            checked={darkMode}
-            inputProps={{
-              'aria-labelledby': 'switch-dark-mode',
-            }}
-          />
-        </ListItem>
-
-        <Divider />
       </List>
 
       <List

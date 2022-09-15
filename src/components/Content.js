@@ -2,23 +2,35 @@ import { Route, Routes } from "react-router-dom"
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import AboutMe from '../pages/AboutMe';
-import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes, ThemeProvider, useTheme } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-let theme = createTheme()
-theme = responsiveFontSizes(theme)
+let fontTheme = createTheme()
+fontTheme = responsiveFontSizes(fontTheme)
 
 function Content() {
+const theme = useTheme()
+
   return (
-    <div className="Content">
-      {/* <div className="Page"><h1>Home</h1></div> */}
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={fontTheme}>
+      <Box 
+        className="Content"
+        sx={{
+          background: `linear-gradient(to bottom, ${theme.palette.primary.main} 0%, 20%, ${theme.palette.background.paper} 40%)`,
+          // background: `linear-gradient(to bottom, ${theme.palette.primary.main} 0%, ` + `${theme.palette.primary.light} 50%, ${theme.palette.background.paper} 100%)`,
+          // background:
+          //   "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
+          //   "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+          // backgroundColor: "background.paper",
+        }}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about-me" element={<AboutMe />} />
         </Routes>
-      </ThemeProvider>
-    </div>
+      </Box>
+    </ThemeProvider>
   )
 }
 

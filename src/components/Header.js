@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from './Menu';
-import { IconButton, Typography, Box } from '@mui/material';
+import { IconButton, Typography, Box, Tooltip } from '@mui/material';
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
+import NightlightIcon from '@mui/icons-material/Nightlight';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 function Header({ darkMode, handleDarkMode }) {
   const [open, setOpen] = useState(false)
@@ -14,6 +17,8 @@ function Header({ darkMode, handleDarkMode }) {
   const handleDrawerClose = () => {
     setOpen(false)
   }
+  
+  const theme = useTheme()
 
   return (
     <>
@@ -39,21 +44,33 @@ function Header({ darkMode, handleDarkMode }) {
         <Typography 
           variant="h6" 
           noWrap  
-          sx={{ flexGrow: 1 }}
+          sx={{ 
+            "&:hover": {
+              color: "primary.main"
+            }
+          }}
           component={Link} to="/"
           color="inherit"
         >
           Julie Evans
         </Typography>
-        <IconButton
-          edge="end"
-          color="inherit"
-          aria-label="menu-open"
-          onClick={handleDrawerOpen}
-          sx={{ ...(open && { display: 'none' }) }}
-        >
-          <MenuIcon />
-        </IconButton>
+        <Box>
+          <Tooltip title={`${theme.palette.mode === "dark" ? "Dark" : "Light"} Mode`} arrow>
+            <IconButton onClick={handleDarkMode}>
+              {theme.palette.mode === "dark" ? <NightlightIcon /> : <LightModeIcon />}
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Menu" arrow>
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu-open"
+              onClick={handleDrawerOpen}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Tooltip>
+        </Box>
       </Box>
       <Menu 
         open={open} 

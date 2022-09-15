@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Typography, Fab, Button, Link as Anchor } from '@mui/material';
+import { Typography, Fab, Button, Link as Anchor, Box } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -19,8 +19,27 @@ function Home() {
       >
         <SwiperSlide>
           <div className="Slide">
-            <Typography variant="h3">Julie M. Evans</Typography>
-            <Typography variant="subtitle1">Web Developer / Software Engineer / Full-Stack Developer</Typography>
+            <Typography variant="h3" noWrap>Julie M. Evans</Typography>
+            {/* <Typography variant="subtitle1" noWrap>Web Developer / Software Engineer / Full-Stack Developer</Typography> */}
+            <Box className="wrap">
+              <Typography 
+                variant="subtitle1" noWrap
+                sx={{ mr: 1}}
+              >
+                Web Developer <span>/</span>
+              </Typography>
+              <Typography 
+                variant="subtitle1" noWrap
+                sx={{ mr: 1}}
+              >
+                Software Engineer <span>/</span>
+              </Typography>
+              <Typography 
+                variant="subtitle1" noWrap
+              >
+                Full-Stack Developer
+              </Typography>
+            </Box>
             <Fab 
               variant="extended" 
               color="primary" 
@@ -39,7 +58,7 @@ function Home() {
           <div className="Slide">
             <Typography variant="h3">Projects</Typography>
             <Typography variant="subtitle1">Some of my most recent Projects that I've made.</Typography>
-            <Button component={Link} to="/projects">See More</Button>
+            <Button component={Link} to="/projects">See My Work</Button>
           </div>
         </SwiperSlide>
         <SwiperSlide>

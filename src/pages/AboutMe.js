@@ -3,9 +3,11 @@ import Contact from '../components/Contact';
 
 function AboutMe() {
   return (
-    <div className="Page row split-column">
-      <Intro />
-      <Contact />
+    <div className="Page">
+      <div className="row split-column">
+        <Intro />
+        <Contact />
+      </div>
     </div>
   )
 }

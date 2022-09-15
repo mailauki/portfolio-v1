@@ -1,4 +1,5 @@
 import { List, ListItem, ListItemIcon, ListItemText, Typography, Divider, Link as Anchor } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import HouseIcon from '@mui/icons-material/House';
@@ -7,8 +8,24 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import DevIcon from '@mui/icons-material/LogoDev';
 
 function Contact() {
+  const theme = useTheme()
+  
   return (
-    <List>
+    <List
+      // sx={{
+      //   // backgroundColor: "background.paper",
+      //   backgroundColor: "rgba(255, 255, 255, 0.3)",
+      //   borderRadius: "10px",
+      //   // filter: "blur(4px)",
+      //   // background: "filter: opacity(30%)",
+      //   backdropFilter: "opacity(70%)",
+      // }}
+      // className="backdrop"
+      sx={{ 
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(80,80,80,0.3)" : "rgba(225,225,225,0.3)", 
+        borderRadius: "10px",
+      }}
+    >
       <ListItem>
         <ListItemText 
           primary={<Typography variant="h6">Contact</Typography>} 
