@@ -10,12 +10,12 @@ import { Scrollbar, Mousewheel } from "swiper";
 function Projects() {
   return (
     <div className="Page">
-      {/* <Box sx={{ position: "absolute", top: "64px", width: "100%", alignItems: "center", textAlign: "center", zIndex: 1 }}>
+      <Box sx={{ position: "absolute", top: "84px", width: "100%", alignItems: "center", textAlign: "center", zIndex: 1 }}>
         <Typography variant="h3">Projects</Typography>
-      </Box> */}
-      <Typography variant="h3">Projects</Typography>
+      </Box>
+      {/* <Typography variant="h3">Projects</Typography> */}
       <Swiper
-        className="Swiper Projects"
+        className="Swiper"
         direction={"vertical"}
         slidesPerView="auto"
         scrollbar
@@ -23,7 +23,7 @@ function Projects() {
         modules={[Scrollbar, Mousewheel]}
       >
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <ProjectCard 
               title="CatTube" 
               description="This is a website for posting and commenting on cat-related videos. For more information see README on GitHub." 
@@ -31,10 +31,10 @@ function Projects() {
               githubLink="https://github.com/mailauki/phase-4-project-cattube" 
               deployLink="https://cattube-project.herokuapp.com" 
             />
-          </div>
+          </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <ProjectCard 
               title="PicWorthy" 
               description="This is a website for posting, liking, and commenting on photos. For more information see README on GitHub." 
@@ -42,10 +42,10 @@ function Projects() {
               githubLink="https://github.com/mailauki/pic-worthy" 
               deployLink="https://pic-worthy-project.herokuapp.com" 
             />
-          </div>
+          </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <ProjectCard 
               title="Le Banque du Porcine" 
               description="For more information see README on GitHub." 
@@ -53,7 +53,7 @@ function Projects() {
               githubLink="https://github.com/mailauki/le-banque-du-porcine" 
               deployLink="https://le-banque-du-porcine.herokuapp.com" 
             />
-          </div>
+          </Box>
         </SwiperSlide>
       </Swiper>
     </div>

@@ -9,7 +9,7 @@ function Intro() {
     <Box 
       className="Intro"
       sx={{ 
-        backgroundColor: theme.palette.mode === "dark" ? "rgba(80,80,80,0.3)" : "rgba(225,225,225,0.3)", 
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)", 
         borderRadius: "10px",
       }}
     >

@@ -12,16 +12,11 @@ function Content() {
 const theme = useTheme()
 
   return (
-    <ThemeProvider theme={fontTheme}>
+    // <ThemeProvider theme={fontTheme}>
       <Box 
         className="Content"
         sx={{
           background: `linear-gradient(to bottom, ${theme.palette.primary.main} 0%, 20%, ${theme.palette.background.paper} 40%)`,
-          // background: `linear-gradient(to bottom, ${theme.palette.primary.main} 0%, ` + `${theme.palette.primary.light} 50%, ${theme.palette.background.paper} 100%)`,
-          // background:
-          //   "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
-          //   "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-          // backgroundColor: "background.paper",
         }}
       >
         <Routes>
@@ -30,7 +25,7 @@ const theme = useTheme()
           <Route path="/about-me" element={<AboutMe />} />
         </Routes>
       </Box>
-    </ThemeProvider>
+    // </ThemeProvider>
   )
 }
 

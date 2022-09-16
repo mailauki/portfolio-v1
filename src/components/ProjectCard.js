@@ -1,28 +1,52 @@
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';import OpenIcon from '@mui/icons-material/OpenInNew';
 
 function ProjectCard({ title, description, image, githubLink, deployLink }) {
+  const theme = useTheme()
+
   return (
-    <Card sx={{ maxWidth: 340, minHeight: "fit-content", textAlign: "left" }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={image}
-        alt={title}
-      />
-      <CardContent>
+    <Box 
+      className="Intro"
+      width="80%"
+      sx={{ 
+        textAlign: "left", 
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)",
+        borderRadius: "10px", 
+        margin: "0 auto"
+      }}
+    >
+      <Box 
+        sx={{ 
+          height: "200px",
+          width: "calc(100% + 20px)",
+          margin: "-10px -10px 10px -10px",
+          background: `linear-gradient(to top, ${theme.palette.divider}, transparent 60%)`,
+        }}
+      >
+        <img 
+          src={image} 
+          alt={title} 
+          className="image"
+          style={{ 
+            filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
+          }} 
+        />
+      </Box>
+      <Box>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
+        <Typography variant="body1" paragraph color="text.secondary">
+        {description}
         </Typography>
-      </CardContent>
-      <CardActions>
+      </Box>
+      <Box>
         <Button 
           aria-label="github" 
           component="a" href={githubLink} target="_blank"
           startIcon={<GitHubIcon />}
+          sx={{ mr: 1 }}
         >
           GitHub
         </Button>
@@ -31,9 +55,11 @@ function ProjectCard({ title, description, image, githubLink, deployLink }) {
           aria-label="visit-site" 
           component="a" href={deployLink} target="_blank"
           startIcon={<OpenIcon />}
-        >Visit Site</Button>
-      </CardActions>
-    </Card>
+        >
+          Visit Site
+        </Button>
+      </Box>
+    </Box>
   )
 }
 
