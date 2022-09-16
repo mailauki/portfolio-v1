@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Typography, Fab, Button, Link as Anchor, Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import EmailIcon from '@mui/icons-material/Email';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,10 +8,12 @@ import "swiper/css/scrollbar";
 import { Scrollbar, Mousewheel } from "swiper";
 
 function Home() {
+  const theme = useTheme()
+
   return (
-    <div className="Page">
+    <Box className="Page">
       <Swiper
-        className="Swiper"
+        className={`Swiper ${theme.palette.mode === "dark" ? "dark" : "light"}`}
         direction={"vertical"}
         slidesPerView="auto"
         scrollbar
@@ -18,9 +21,8 @@ function Home() {
         modules={[Scrollbar, Mousewheel]}
       >
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <Typography variant="h3" noWrap>Julie M. Evans</Typography>
-            {/* <Typography variant="subtitle1" noWrap>Web Developer / Software Engineer / Full-Stack Developer</Typography> */}
             <Box className="wrap">
               <Typography 
                 variant="subtitle1" noWrap
@@ -52,24 +54,24 @@ function Home() {
               <EmailIcon sx={{ mr: 1 }} />
               Contact Me
             </Fab>
-          </div>
+          </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <Typography variant="h3">Projects</Typography>
             <Typography variant="subtitle1">Some of my most recent Projects that I've made.</Typography>
             <Button component={Link} to="/projects">See My Work</Button>
-          </div>
+          </Box>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="Slide">
+          <Box className="Slide">
             <Typography variant="h3">About Me</Typography>
             <Typography variant="subtitle1">New to Tech, but excited for more.</Typography>
             <Button component={Link} to="/about-me">Learn More</Button>
-          </div>
+          </Box>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </Box>
   )
 }
 

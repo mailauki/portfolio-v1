@@ -120,7 +120,15 @@ a {
   flex-direction: row;
 }
 
-@media (max-width: 600px) {
+.dark .swiper-scrollbar {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.dark .swiper-scrollbar-drag {
+  background-color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 640px) {
   .split-column {
     flex-direction: column;
   }
@@ -130,7 +138,8 @@ a {
   }
   .wrap {
     flex-direction: column;
-    text-align: left;
+    /* text-align: left; */
+    /* margin-left: -24%; */
   }
   .wrap span {
     display: none;

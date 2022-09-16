@@ -1,5 +1,6 @@
 import ProjectCard from '../components/ProjectCard';
 import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import CatTubeProjectImage from '../images/cat-tube.png';
 import PicWorthyProjectImage from '../images/pic-worthy.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,14 +9,16 @@ import "swiper/css/scrollbar";
 import { Scrollbar, Mousewheel } from "swiper";
 
 function Projects() {
+  const theme = useTheme()
+
   return (
-    <div className="Page">
+    <Box className="Page">
       <Box sx={{ position: "absolute", top: "84px", width: "100%", alignItems: "center", textAlign: "center", zIndex: 1 }}>
         <Typography variant="h3">Projects</Typography>
       </Box>
       {/* <Typography variant="h3">Projects</Typography> */}
       <Swiper
-        className="Swiper"
+        className={`Swiper ${theme.palette.mode === "dark" ? "dark" : "light"}`}
         direction={"vertical"}
         slidesPerView="auto"
         scrollbar
@@ -56,7 +59,7 @@ function Projects() {
           </Box>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </Box>
   )
 }
 export default Projects;

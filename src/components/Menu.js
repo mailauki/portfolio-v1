@@ -57,6 +57,7 @@ function Menu({ open, handleDrawerClose }) {
           <ListItemButton
             component={Link}
             to="/"
+            onClick={handleDrawerClose} 
             sx={{
               color: location.pathname === "/" ? "primary.main" : ""
             }}
@@ -75,6 +76,7 @@ function Menu({ open, handleDrawerClose }) {
           <ListItemButton
             component={Link}
             to="/projects"
+            onClick={handleDrawerClose} 
             sx={{
               color: location.pathname === "/projects" ? "primary.main" : ""
             }}
@@ -93,6 +95,7 @@ function Menu({ open, handleDrawerClose }) {
           <ListItemButton
             component={Link}
             to="/about-me"
+            onClick={handleDrawerClose} 
             sx={{
               color: location.pathname === "/about-me" ? "primary.main" : ""
             }}
@@ -136,6 +139,7 @@ function Menu({ open, handleDrawerClose }) {
             <Button 
               component={Anchor}  
               href="https://github.com/mailauki" 
+              target="_blank"
             >
               <GitHubIcon />
             </Button>
@@ -143,7 +147,6 @@ function Menu({ open, handleDrawerClose }) {
               component={Anchor}  
               href="https://dev.to/mailauki" 
               target="_blank"
-              underline="hover"
             >
               <DevIcon />
             </Button>

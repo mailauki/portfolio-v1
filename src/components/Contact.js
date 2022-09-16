@@ -13,7 +13,7 @@ function Contact() {
   return (
     <List
       sx={{ 
-        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(195,195,195,0.3)",
+        backgroundColor: theme.palette.box,
         borderRadius: "10px",
       }}
     >
