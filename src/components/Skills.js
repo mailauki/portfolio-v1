@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'react';
 import { List, ListItem, ListItemAvatar, ListItemText, Avatar, SvgIcon, Typography, Divider } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CssIcon from '@mui/icons-material/Css';
 
 function Skills() {
   const theme = useTheme()
+  const [mobileView, setMoblieView] = useState(window.innerWidth < 640)
+
+  function updateMedia() {
+    setMoblieView(window.innerWidth < 640)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  }, [])
 
   return (
     <List 
@@ -20,7 +31,11 @@ function Skills() {
           primary={<Typography variant="h6">Skills</Typography>} 
         />
       </ListItem>
-      <Divider orientation="vertical" flexItem />
+      {mobileView ? (
+        <Divider />
+      ) : (
+        <Divider orientation="vertical" flexItem />
+      )}
       <ListItem>
         <ListItemAvatar>
           <Avatar>
