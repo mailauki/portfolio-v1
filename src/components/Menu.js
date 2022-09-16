@@ -1,6 +1,6 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Link as Anchor } from '@mui/material';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Link as Anchor} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Web';
@@ -54,17 +54,17 @@ function Menu({ open, handleDrawerClose }) {
 
       <List>
         <ListItem disablePadding>
-          <ListItemButton 
-            compontent={NavLink} 
-            to="/" 
-            sx={() => ({
+          <ListItemButton
+            component={Link}
+            to="/"
+            sx={{
               color: location.pathname === "/" ? "primary.main" : ""
-            })}
+            }}
           >
             <ListItemIcon
-            sx={() => ({
-              color: location.pathname === "/" ? "primary.main" : ""
-            })}
+              sx={{
+                color: location.pathname === "/" ? "primary.main" : ""
+              }}
             >
               <HomeIcon />
             </ListItemIcon>
@@ -72,17 +72,17 @@ function Menu({ open, handleDrawerClose }) {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton 
-            compontent={NavLink} 
+          <ListItemButton
+            component={Link}
             to="/projects"
-            sx={() => ({
+            sx={{
               color: location.pathname === "/projects" ? "primary.main" : ""
-            })}
+            }}
           >
             <ListItemIcon
-              sx={() => ({
+              sx={{
                 color: location.pathname === "/projects" ? "primary.main" : ""
-              })}
+              }}
             >
               <WebIcon />
             </ListItemIcon>
@@ -90,17 +90,17 @@ function Menu({ open, handleDrawerClose }) {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton 
-            compontent={NavLink} 
+          <ListItemButton
+            component={Link}
             to="/about-me"
-            sx={() => ({
+            sx={{
               color: location.pathname === "/about-me" ? "primary.main" : ""
-            })}
+            }}
           >
             <ListItemIcon
-              sx={() => ({
+              sx={{
                 color: location.pathname === "/about-me" ? "primary.main" : ""
-              })}
+              }}
             >
               <AccountCircleIcon />
             </ListItemIcon>

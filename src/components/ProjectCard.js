@@ -1,4 +1,4 @@
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box } from '@mui/material';
+import { Button, Typography, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';import OpenIcon from '@mui/icons-material/OpenInNew';
 
@@ -16,23 +16,20 @@ function ProjectCard({ title, description, image, githubLink, deployLink }) {
         margin: "0 auto"
       }}
     >
-      <Box 
-        sx={{ 
-          height: "200px",
+      <img 
+        src={image} 
+        alt={title} 
+        className="project"
+        style={{ 
+          filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
+          minHeight: "100px",
+          maxHeight: "200px",
           width: "calc(100% + 20px)",
           margin: "-10px -10px 10px -10px",
+          objectFit: "contain",
           background: `linear-gradient(to top, ${theme.palette.divider}, transparent 60%)`,
-        }}
-      >
-        <img 
-          src={image} 
-          alt={title} 
-          className="image"
-          style={{ 
-            filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
-          }} 
-        />
-      </Box>
+        }} 
+      />
       <Box>
         <Typography gutterBottom variant="h5" component="div">
           {title}
