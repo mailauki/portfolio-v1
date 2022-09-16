@@ -28,13 +28,13 @@ function Home() {
                 variant="subtitle1" noWrap
                 sx={{ mr: 1}}
               >
-                Web Developer <span>/</span>
+                Web Developer <span className="span">/</span>
               </Typography>
               <Typography 
                 variant="subtitle1" noWrap
                 sx={{ mr: 1}}
               >
-                Software Engineer <span>/</span>
+                Software Engineer <span className="span">/</span>
               </Typography>
               <Typography 
                 variant="subtitle1" noWrap

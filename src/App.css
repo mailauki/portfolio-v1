@@ -141,7 +141,7 @@ a {
     /* text-align: left; */
     /* margin-left: -24%; */
   }
-  .wrap span {
+  .wrap .span {
     display: none;
   }
 }

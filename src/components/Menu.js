@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Drawer, IconButton, Button, ButtonGroup, Link as Anchor} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import WebIcon from '@mui/icons-material/Web';
@@ -23,6 +24,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 function Menu({ open, handleDrawerClose }) {
   let location = useLocation()
+  const theme = useTheme()
 
   return (
     <Drawer
@@ -118,10 +120,11 @@ function Menu({ open, handleDrawerClose }) {
           mb: 2,
           position: 'absolute',
           bottom: 0,
+          color: theme.palette.text.secondary
         }}
       >
         <ListItem sx={{ justifyContent: "center" }}>
-          <ButtonGroup variant="text">
+          <ButtonGroup variant="text" color="inherit">
             <Button 
               component={Anchor}  
               href="mailto:juliemevans17@gmail.com" 
