@@ -13,6 +13,7 @@ const theme = useTheme()
       className="Content"
       sx={{
         background: `linear-gradient(to bottom, ${theme.palette.secondary.main} 0%, 20%, ${theme.palette.background.paper} 40%)`,
+        backgroundAttachment: "fixed",
       }}
     >
       <Routes>
