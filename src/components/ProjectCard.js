@@ -23,7 +23,8 @@ function ProjectCard({ title, description, image, githubLink, deployLink }) {
         style={{ 
           filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
           minHeight: "100px",
-          maxHeight: "200px",
+          maxHeight: "180px",
+          minWidth: "calc(100% + 20px)",
           width: "calc(100% + 20px)",
           margin: "-10px -10px 10px -10px",
           objectFit: "contain",
