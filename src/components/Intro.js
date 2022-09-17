@@ -3,7 +3,7 @@ import Logo from '../images/JE-logo.png';
 import { Typography, Avatar, Box, Button } from '@mui/material';
 import { createTheme, responsiveFontSizes, ThemeProvider, useTheme } from '@mui/material/styles';
 import DownloadIcon from '@mui/icons-material/Download';
-import JulieEvansResume from '../JulieEvansResume.pdf';
+import JulieEvansResume from '../files/JulieEvansResume.pdf';
 
 function Intro() {
   const theme = useTheme()

@@ -88,7 +88,7 @@ a {
     margin-right: auto;
     margin-bottom: 20px;
   }
-  .wrap {
+  .wrap, .grid {
     flex-direction: column;
   }
   .wrap .span {
