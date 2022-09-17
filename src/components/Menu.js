@@ -61,12 +61,12 @@ function Menu({ open, handleDrawerClose }) {
             to="/"
             onClick={handleDrawerClose} 
             sx={{
-              color: location.pathname === "/" ? "primary.main" : ""
+              color: location.pathname === "/" ? "secondary.main" : ""
             }}
           >
             <ListItemIcon
               sx={{
-                color: location.pathname === "/" ? "primary.main" : ""
+                color: location.pathname === "/" ? "secondary.main" : ""
               }}
             >
               <HomeIcon />
@@ -80,12 +80,12 @@ function Menu({ open, handleDrawerClose }) {
             to="/projects"
             onClick={handleDrawerClose} 
             sx={{
-              color: location.pathname === "/projects" ? "primary.main" : ""
+              color: location.pathname === "/projects" ? "secondary.main" : ""
             }}
           >
             <ListItemIcon
               sx={{
-                color: location.pathname === "/projects" ? "primary.main" : ""
+                color: location.pathname === "/projects" ? "secondary.main" : ""
               }}
             >
               <WebIcon />
@@ -99,12 +99,12 @@ function Menu({ open, handleDrawerClose }) {
             to="/about-me"
             onClick={handleDrawerClose} 
             sx={{
-              color: location.pathname === "/about-me" ? "primary.main" : ""
+              color: location.pathname === "/about-me" ? "secondary.main" : ""
             }}
           >
             <ListItemIcon
               sx={{
-                color: location.pathname === "/about-me" ? "primary.main" : ""
+                color: location.pathname === "/about-me" ? "secondary.main" : ""
               }}
             >
               <AccountCircleIcon />

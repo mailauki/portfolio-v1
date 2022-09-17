@@ -15,15 +15,24 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: "light",
-      box: "rgba(225,225,225,0.3)"
-      // box: "rgba(195,195,195,0.3)"
+      box: "rgba(225,225,225,0.3)",
+      secondary: {
+        main: "#E1A100",
+        light: "#E7B333",
+        dark: "#9D7000",
+      }
     }
   })
   
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
-      box: "rgba(60,60,60,0.3)"
+      box: "rgba(60,60,60,0.3)",
+      secondary: {
+        main: "#E4B828",
+        light: "#E9C653",
+        dark: "#9F801C",
+      }
     }
   })
 
