@@ -72,6 +72,14 @@ a {
   flex-direction: row;
 }
 
+.wrap ul {
+  flex-wrap: wrap;
+}
+
+.wrap li {
+  width: fit-content;
+}
+
 .dark .swiper-scrollbar {
   background-color: rgba(255,255,255,0.1);
 }

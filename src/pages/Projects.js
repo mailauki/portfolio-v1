@@ -1,8 +1,9 @@
 import ProjectCard from '../components/ProjectCard';
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import CatTubeProjectImage from '../images/cat-tube.png';
-import PicWorthyProjectImage from '../images/pic-worthy.png';
+import CatTubeProjectImage from '../images/cat-tube.jpg';
+import PicWorthyProjectImage from '../images/pic-worthy.jpg';
+import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/scrollbar";
@@ -16,7 +17,6 @@ function Projects() {
       <Box sx={{ position: "absolute", top: "84px", width: "100%", alignItems: "center", textAlign: "center", zIndex: 1 }}>
         <Typography variant="h3">Projects</Typography>
       </Box>
-      {/* <Typography variant="h3">Projects</Typography> */}
       <Swiper
         className={`Swiper ${theme.palette.mode === "dark" ? "dark" : "light"}`}
         direction={"vertical"}
@@ -51,10 +51,10 @@ function Projects() {
           <Box className="Slide">
             <ProjectCard 
               title="Le Banque du Porcine" 
-              description="For more information see README on GitHub." 
-              image="" 
-              githubLink="https://github.com/mailauki/le-banque-du-porcine" 
-              deployLink="https://le-banque-du-porcine.herokuapp.com" 
+              description="This is a website for viewing balances and wish-list items, with progress bars calculated based on both. For more information see README on GitHub." 
+              image={LeBanqueDuPorcineImage}
+              githubLink="https://github.com/mailauki/le-banque-du-porcine-version-2" 
+              deployLink="https://le-banque-du-porcine.netlify.app/" 
             />
           </Box>
         </SwiperSlide>
