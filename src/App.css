@@ -25,27 +25,22 @@ a {
 .Swiper {
   height: calc(100vh - 148px);
   width: 100%;
-
   z-index: 0;
 }
 
 .Slide {
   height: calc(100vh - 148px);
   margin: auto 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   z-index: 0;
 }
 
 .Page {
   height: 100%;
-
   text-align: center;
-
   padding-top: 20px;
 }
 
@@ -64,7 +59,13 @@ a {
 .Intro {
   margin-right: 20px;
   padding: 10px;
+}
+
+.Card {
+  margin-right: 20px;
   overflow: hidden;
+  width: 80%;
+  max-width: 800px;
 }
 
 .wrap {
@@ -88,6 +89,10 @@ a {
   background-color: rgba(255,255,255,0.5);
 }
 
+.wrap .span {
+  margin: auto 10px;
+}
+
 @media (max-width: 640px) {
   .split-column {
     flex-direction: column;
@@ -99,13 +104,16 @@ a {
   .wrap, .grid {
     flex-direction: column;
   }
-  .wrap .span {
+  .wrap .span, h3 .span {
     display: none;
   }
 }
 
 @media (max-height: 400px) {
   .project {
+    display: none;
+  }
+  .Avatar span {
     display: none;
   }
 }

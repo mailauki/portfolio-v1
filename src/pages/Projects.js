@@ -33,6 +33,7 @@ function Projects() {
               image={CatTubeProjectImage} 
               githubLink="https://github.com/mailauki/phase-4-project-cattube" 
               deployLink="https://cattube-project.herokuapp.com" 
+              tags={["React", "Rails", "PostgreSQL", "Netlify", "Render"]}
             />
           </Box>
         </SwiperSlide>
@@ -44,6 +45,7 @@ function Projects() {
               image={PicWorthyProjectImage} 
               githubLink="https://github.com/mailauki/pic-worthy" 
               deployLink="https://pic-worthy-project.herokuapp.com" 
+              tags={["React", "Rails", "PostgreSQL", "Netlify", "Render", "MaterialUI", "SwiperJs"]}
             />
           </Box>
         </SwiperSlide>
@@ -55,6 +57,19 @@ function Projects() {
               image={LeBanqueDuPorcineImage}
               githubLink="https://github.com/mailauki/le-banque-du-porcine-version-2" 
               deployLink="https://le-banque-du-porcine.netlify.app/" 
+              tags={["NextJs", "Netlify", "Supabase", "MaterialUI", "SwiperJs"]}
+            />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Box className="Slide">
+            <ProjectCard 
+              title="PokeTracker" 
+              description="This is a website for viewing viewing pokemon, pokedexes, and tracking your collection. For more information see README on GitHub." 
+              image=""
+              githubLink="https://github.com/mailauki/poke-tracker" 
+              deployLink="https://poke-tracker.netlify.app/" 
+              tags={["React", "TypeScript", "Netlify", "MaterialUI"]}
             />
           </Box>
         </SwiperSlide>

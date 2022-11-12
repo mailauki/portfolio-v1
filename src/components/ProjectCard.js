@@ -1,61 +1,73 @@
-import { Button, Typography, Box } from '@mui/material';
+import { Button, Typography, Box, Chip } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import GitHubIcon from '@mui/icons-material/GitHub';import OpenIcon from '@mui/icons-material/OpenInNew';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import OpenIcon from '@mui/icons-material/OpenInNew';
 
-function ProjectCard({ title, description, image, githubLink, deployLink }) {
+function ProjectCard({ title, description, image, githubLink, deployLink, tags }) {
   const theme = useTheme()
 
   return (
     <Box 
-      className="Intro"
-      width="80%"
+      className="Card"
+      height="75%"
       sx={{ 
         textAlign: "left", 
-        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)",
         borderRadius: "10px", 
-        margin: "0 auto"
+        margin: "0 auto",
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
+        justifyContent: "space-between",
       }}
     >
       <img 
-        src={image} 
+        src={image ? image : `https://via.placeholder.com/310x200?text=${title}`} 
         alt={title} 
         className="project"
         style={{ 
           filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
           minHeight: "100px",
-          maxHeight: "180px",
-          minWidth: "calc(100% + 20px)",
-          width: "calc(100% + 20px)",
-          margin: "-10px -10px 10px -10px",
+          height: "40%",
           objectFit: "contain",
           background: `linear-gradient(to top, ${theme.palette.divider}, transparent 60%)`,
+          flexGrow: 2
         }} 
       />
-      <Box>
+      <Box 
+        sx={{ 
+          display: "flex", 
+          flexDirection: "column", 
+          gap: 1, 
+          padding: "10px"
+        }}
+      >
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
         <Typography variant="body1" paragraph color="text.secondary">
         {description}
         </Typography>
-      </Box>
-      <Box>
-        <Button 
-          aria-label="github" 
-          component="a" href={githubLink} target="_blank"
-          startIcon={<GitHubIcon />}
-          sx={{ mr: 1 }}
-        >
-          GitHub
-        </Button>
-        <Button 
-          size="small" 
-          aria-label="visit-site" 
-          component="a" href={deployLink} target="_blank"
-          startIcon={<OpenIcon />}
-        >
-          Visit Site
-        </Button>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+          {tags.map((tag) => <Chip label={tag} />)}
+        </Box>
+        <Box>
+          <Button 
+            aria-label="github" 
+            component="a" href={githubLink} target="_blank"
+            startIcon={<GitHubIcon />}
+            sx={{ mr: 1 }}
+          >
+            GitHub
+          </Button>
+          <Button 
+            aria-label="visit-site" 
+            component="a" href={deployLink} target="_blank"
+            startIcon={<OpenIcon />}
+          >
+            Visit Site
+          </Button>
+        </Box>
       </Box>
     </Box>
   )
