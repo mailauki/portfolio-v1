@@ -22,6 +22,14 @@ a {
   margin-bottom: 64px;
 }
 
+.Page {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
 .Swiper {
   height: calc(100vh - 148px);
   width: 100%;
@@ -29,19 +37,13 @@ a {
 }
 
 .Slide {
-  height: calc(100vh - 148px);
-  margin: auto 20px;
+  min-height: calc(100vh - 128px);
+  margin: auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 0;
-}
-
-.Page {
-  height: 100%;
-  text-align: center;
-  padding-top: 20px;
 }
 
 .row {
@@ -50,22 +52,31 @@ a {
   align-items: stretch;
 }
 
-.split-column {
-  align-items: flex-start;
-  margin: auto 20px;
-  align-items: stretch;
-}
-
-.Intro {
-  margin-right: 20px;
-  padding: 10px;
-}
-
 .Card {
-  margin-right: 20px;
   overflow: hidden;
+  height: calc(100vh - 268px);
   width: 80%;
   max-width: 800px;
+  text-align: left; 
+  border-radius: 10px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.Panels {
+  padding-top: 20px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.Panel:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .wrap {
@@ -93,13 +104,41 @@ a {
   margin: auto 10px;
 }
 
-@media (max-width: 640px) {
-  .split-column {
-    flex-direction: column;
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.hidden:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.Slide:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.Slide:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
   }
-  .Intro {
-    margin-right: auto;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .Panels {
+    display: flex;
+    flex-direction: column;
   }
   .wrap, .grid {
     flex-direction: column;
@@ -109,11 +148,17 @@ a {
   }
 }
 
-@media (max-height: 400px) {
-  .project {
+@media (max-height: 450px) {
+  .Avatar span {
     display: none;
   }
-  .Avatar span {
+  .Card p {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) {
+  .project-image {
     display: none;
   }
 }

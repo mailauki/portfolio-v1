@@ -32,8 +32,8 @@ function Skills() {
       sx={{ 
         backgroundColor: theme.palette.box, 
         borderRadius: "10px", 
-        margin: "20px",
-        padding: 0,
+        // margin: "20px",
+        padding: 0
       }}
     >
       <ListItem sx={{ width: "fit-content", mr: 1 }}>

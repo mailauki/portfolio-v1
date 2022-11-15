@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Content from './components/Content';
 import './App.css';
@@ -7,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
+  const location = useLocation()
 
   function handleDarkMode() {
     setDarkMode(!darkMode)
@@ -35,6 +37,23 @@ function App() {
       }
     }
   })
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add("show")
+        } else {
+          entry.target.classList.remove("show")
+        }
+      })
+    })
+  
+    const hiddenElements = document.querySelectorAll(".hidden")
+    hiddenElements.forEach((el) => observer.observe(el))
+
+    window.scrollTo(0,0)
+  }, [location.pathname])
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>

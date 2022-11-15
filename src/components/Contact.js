@@ -15,6 +15,7 @@ function Contact() {
       sx={{ 
         backgroundColor: theme.palette.box,
         borderRadius: "10px",
+        height: "100%"
       }}
     >
       <ListItem>

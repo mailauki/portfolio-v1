@@ -5,12 +5,16 @@ import { Box } from '@mui/material';
 
 function AboutMe() {
   return (
-    <Box className="Page">
-      <Box className="row split-column">
+    <Box className="Page Panels">
+      <Box className="Panel hidden">
         <Intro />
+      </Box>
+      <Box className="Panel hidden">
         <Contact />
       </Box>
-      <Skills />
+      <Box className="Panel hidden">
+        <Skills />
+      </Box>
     </Box>
   )
 }

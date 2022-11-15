@@ -14,10 +14,10 @@ function Intro() {
   return (
     <ThemeProvider theme={fontTheme}>
       <Box 
-        className="Intro"
         sx={{ 
           backgroundColor: theme.palette.box, 
           borderRadius: "10px",
+          padding: "10px"
         }}
       >
         <Box className="row">

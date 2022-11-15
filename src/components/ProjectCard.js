@@ -3,35 +3,28 @@ import { useTheme } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenIcon from '@mui/icons-material/OpenInNew';
 
-function ProjectCard({ title, description, image, githubLink, deployLink, tags }) {
+function ProjectCard({ info }) {
+  const { title, description, image, githubLink, deployLink, tags } = info
   const theme = useTheme()
 
   return (
     <Box 
       className="Card"
-      height="75%"
       sx={{ 
-        textAlign: "left", 
-        borderRadius: "10px", 
-        margin: "0 auto",
-        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "stretch",
-        justifyContent: "space-between",
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)"
       }}
     >
       <img 
         src={image ? image : `https://via.placeholder.com/310x200?text=${title}`} 
         alt={title} 
-        className="project"
+        className="project-image"
         style={{ 
           filter: theme.palette.mode === "dark" ? "opacity(0.8)" : "opacity(1)", 
           minHeight: "100px",
           height: "40%",
           objectFit: "contain",
           background: `linear-gradient(to top, ${theme.palette.divider}, transparent 60%)`,
-          flexGrow: 2
+          flexGrow: 1
         }} 
       />
       <Box 
