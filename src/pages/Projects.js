@@ -3,11 +3,9 @@ import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CatTubeProjectImage from '../images/cat-tube.jpg';
 import PicWorthyProjectImage from '../images/pic-worthy.jpg';
-import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg'
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import "swiper/css/scrollbar";
-// import { Scrollbar, Mousewheel } from "swiper";
+import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg';
+import PokeTrackerImage from '../images/poke-tracker.jpg';
+import TicTacToeImage from '../images/tic-tac-toe.jpg';
 
 function Projects() {
   const theme = useTheme()
@@ -26,7 +24,7 @@ function Projects() {
     image: PicWorthyProjectImage, 
     githubLink: "https://github.com/mailauki/pic-worthy", 
     deployLink: "https://pic-worthy.onrender.com", 
-    tags: ["React", "Ruby", "Rails", "PostgreSQL", "Render", "Material UI", "Swiper JS"] 
+    tags: ["React", "Redux", "Ruby", "Rails", "PostgreSQL", "Render", "Material UI", "Swiper JS"] 
   },
   { 
     title: "Le Banque du Porcine", 
@@ -34,20 +32,20 @@ function Projects() {
     image: LeBanqueDuPorcineImage, 
     githubLink: "https://github.com/mailauki/le-banque-du-porcine-version-2", 
     deployLink: "https://le-banque-du-porcine.netlify.app", 
-    tags: ["Next JS", "Netlify", "Supabase", "Material UI", "Swiper JS"] 
+    tags: ["Next JS", "Redux", "Netlify", "Supabase", "Material UI", "Swiper JS"] 
   },
   { 
     title: "PokeTracker", 
     description: "This is a website for viewing viewing pokemon, pokedexes, and tracking your collection. For more information see README on GitHub.", 
-    image: "", 
+    image: PokeTrackerImage, 
     githubLink: "https://github.com/mailauki/poke-tracker", 
     deployLink: "https://poke-tracker.netlify.app", 
-    tags: ["React", "TypeScript", "Netlify", "Material UI"] 
+    tags: ["React", "TypeScript", "Redux", "Netlify", "Material UI"]
   },
   {
     title: "Tic-Tac-Toe",
     description: "This is a website for playing tic-tac-toe, either against the computer or a friend. For more information see README on GitHub.",
-    image: "",
+    image: TicTacToeImage,
     githubLink: "https://github.com/mailauki/tic-tac-toe",
     deployLink: "https://mailauki-tic-tac-toe.netlify.app",
     tags: ["React", "Netlify", "Chakra UI"]
@@ -59,7 +57,7 @@ function Projects() {
         sx={{ 
           position: "fixed", 
           top: "64px", 
-          height: "70px",
+          height: "64px",
           width: "100%", 
           textAlign: "center", 
           display: "flex",
@@ -72,8 +70,10 @@ function Projects() {
         <Typography variant="h3">Projects</Typography>
       </Box>
 
+      <Box sx={{ height: "64px", backgroundColor: "purple" }}></Box>
+
       {cardInfo.reverse().map((info) => (
-        <Box className="Slide hidden">
+        <Box className="Slide">
           <ProjectCard 
             info={info}
           />

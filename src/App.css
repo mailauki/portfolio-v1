@@ -17,9 +17,18 @@ a {
 }
 
 .Content {
-  min-height: calc(100vh - 128px);
+  /* min-height: calc(100vh - 128px); */
+  height: calc(100vh - 128px);
   margin-top: 64px;
   margin-bottom: 64px;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Content::-webkit-scrollbar {
+  display: none;
 }
 
 .Page {
@@ -54,7 +63,7 @@ a {
 
 .Card {
   overflow: hidden;
-  height: calc(100vh - 268px);
+  /* min-height: calc(100vh - 268px); */
   width: 80%;
   max-width: 800px;
   text-align: left; 
@@ -127,6 +136,41 @@ a {
 
 .Slide:nth-child(4) {
   transition-delay: 600ms;
+}
+
+.wave-emoji {
+  -webkit-animation-duration: 1.8s;
+  animation-duration: 1.8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: wave;
+  animation-name: wave;
+  -webkit-transform-origin: 70% 70%;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media (prefers-reduced-motion) {
