@@ -17,7 +17,8 @@ function Intro() {
         sx={{ 
           backgroundColor: theme.palette.box, 
           borderRadius: "10px",
-          padding: "10px"
+          padding: "10px",
+          height: "100%"
         }}
       >
         <Box className="row">

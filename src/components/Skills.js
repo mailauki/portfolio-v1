@@ -32,7 +32,6 @@ function Skills() {
       sx={{ 
         backgroundColor: theme.palette.box, 
         borderRadius: "10px", 
-        // margin: "20px",
         padding: 0
       }}
     >
@@ -81,14 +80,14 @@ function Skills() {
             </ListItemAvatar>
             <ListItemText primary="Ruby" />
           </ListItem>
-          <ListItem>
+          {/* <ListItem>
             <ListItemAvatar>
               <Avatar variant="rounded">
                 <TypeScriptIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="TypeScript" />
-          </ListItem>
+          </ListItem> */}
         </List>
 
         <Divider />
