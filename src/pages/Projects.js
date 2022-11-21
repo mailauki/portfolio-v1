@@ -70,10 +70,10 @@ function Projects() {
         <Typography variant="h3">Projects</Typography>
       </Box>
 
-      <Box sx={{ height: "64px", backgroundColor: "purple" }}></Box>
+      <Box sx={{ height: "64px" }}></Box>
 
       {cardInfo.reverse().map((info) => (
-        <Box className="Slide">
+        <Box className="Slide hidden">
           <ProjectCard 
             info={info}
           />

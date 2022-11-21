@@ -21,7 +21,7 @@ function Home() {
             Software Engineer<span className="span">/</span>
           </Typography>
           <Typography variant="subtitle1" noWrap>
-            Full-Stack Developer
+            Front-End Developer
           </Typography>
         </Box>
         <Box className="hidden">
