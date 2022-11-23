@@ -18,4 +18,6 @@ Deployed on https://juliemevans-portfolio.netlify.app with Netlify.
 ## Technologies Used
 * [React](https://reactjs.org)
 * [Material UI](https://mui.com)
-* [Swiper JS](https://swiperjs.com)
+
+## Inspiration
+Background based on https://vercel.com/features/previews.

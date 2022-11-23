@@ -2,26 +2,24 @@ import { Route, Routes } from "react-router-dom"
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import AboutMe from '../pages/AboutMe';
-import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 function Content() {
-const theme = useTheme()
-
   return (
-    <Box 
-      className="Content"
-      sx={{
-        background: `linear-gradient(to bottom, ${theme.palette.secondary.main} 0%, 20%, ${theme.palette.background.paper} 40%)`,
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about-me" element={<AboutMe />} />
-      </Routes>
-    </Box>
+    <>
+      <Box className="gradiant-wrapper">
+        <Box className="gradiant-1"></Box>
+        <Box className="gradiant-2"></Box>
+        <Box className="gradiant-3"></Box>
+      </Box>
+      <Box className="Content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about-me" element={<AboutMe />} />
+        </Routes>
+      </Box>
+    </>
   )
 }
 
