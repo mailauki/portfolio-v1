@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Content from './components/Content';
-import './App.css';
+import './styles/App.css';
+import './styles/Background.css';
+import './styles/WaveEmoji.css';
+import './styles/SlideIn.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 

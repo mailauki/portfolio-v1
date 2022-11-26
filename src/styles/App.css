@@ -1,0 +1,141 @@
+a {
+  text-decoration: none;
+}
+
+/* .Header {
+  height: 64px;
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+} */
+
+.Content {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.Page {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* .Swiper {
+  height: calc(100vh - 148px);
+  width: 100%;
+  z-index: 0;
+} */
+
+.Slide {
+  min-height: calc(100vh - 128px);
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.Logo img {
+  filter: brightness(-2);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.Card {
+  overflow: hidden;
+  /* min-height: calc(100vh - 268px); */
+  width: 80%;
+  max-width: 800px;
+  text-align: left; 
+  border-radius: 10px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.Panels {
+  padding-top: 20px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.Panel:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.Panel:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap ul {
+  flex-wrap: wrap;
+}
+
+.wrap li {
+  width: fit-content;
+}
+
+/* .dark .swiper-scrollbar {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.dark .swiper-scrollbar-drag {
+  background-color: rgba(255,255,255,0.5);
+} */
+
+.wrap .span {
+  margin: auto 10px;
+}
+
+@media (max-width: 640px) {
+  .Panels {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap, .grid {
+    flex-direction: column;
+  }
+  .wrap .span, h3 .span {
+    display: none;
+  }
+}
+
+@media (max-height: 450px) {
+  .Avatar span {
+    display: none;
+  }
+  .Card p {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) {
+  .project-image {
+    display: none;
+  }
+}
