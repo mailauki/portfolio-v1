@@ -49,6 +49,18 @@ a {
   filter: brightness(-2);
 }
 
+.bullet-list {
+  list-style: none;
+}
+
+.bullet-list li::before {
+  content: "•";
+  color: red;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
 .row {
   display: flex;
   flex-direction: row;

@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenIcon from '@mui/icons-material/OpenInNew';
 
 function ProjectCard({ info }) {
-  const { title, description, image, githubLink, deployLink, tags } = info
+  const { title, description, image, githubLink, deployLink, links, tags } = info
   const theme = useTheme()
 
   return (
@@ -38,9 +38,21 @@ function ProjectCard({ info }) {
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography variant="body1" paragraph color="text.secondary">
-        {description}
+        <Typography variant="body1" color="text.secondary">
+        {description[0]}
         </Typography>
+        <ul style={{ listStyle: "none", paddingInlineStart: 0 }}>
+          {description.length > 1 ? (
+            description[1].map((item) => (
+              <li style={{ display: "flex", alignItems: "flex-start" }}>
+                <span style={{ margin: "0 10px 0 0", color: theme.palette.text.secondary }}>•</span>
+                <Typography variant="body2" color="text.secondary">{item}</Typography>
+              </li>
+            ))
+          ) : (
+            <></>
+          )}
+        </ul>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
           {tags.map((tag) => <Chip label={tag} />)}
         </Box>
@@ -53,6 +65,9 @@ function ProjectCard({ info }) {
           >
             GitHub
           </Button>
+          {!deployLink ? (
+            <></>
+          ) : (
           <Button 
             aria-label="visit-site" 
             component="a" href={deployLink} target="_blank"
@@ -60,6 +75,7 @@ function ProjectCard({ info }) {
           >
             Visit Site
           </Button>
+          )}
         </Box>
       </Box>
     </Box>
