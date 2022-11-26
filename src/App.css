@@ -17,19 +17,9 @@ a {
 }
 
 .Content {
-  /* min-height: calc(100vh - 128px); */
-  /* height: calc(100vh - 128px); */
   margin-top: 64px;
   margin-bottom: 64px;
-  /* overflow-y: scroll;
-  overscroll-behavior: contain;
-  -ms-overflow-style: none;
-  scrollbar-width: none; */
 }
-
-/* .Content::-webkit-scrollbar {
-  display: none;
-} */
 
 .Page {
   height: 100%;
@@ -53,6 +43,10 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 0;
+}
+
+.Logo img {
+  filter: brightness(-2);
 }
 
 .row {
@@ -79,13 +73,18 @@ a {
   padding-top: 20px;
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.Panel:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .Panel:nth-child(3) {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
 }
 
 .wrap {

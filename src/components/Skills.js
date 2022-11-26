@@ -50,7 +50,7 @@ function Skills() {
         <List className="wrap" >
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <HtmlIcon />
               </Avatar>
             </ListItemAvatar>
@@ -58,7 +58,7 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <CssIcon />
               </Avatar>
             </ListItemAvatar>
@@ -66,7 +66,7 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <JavaScriptIcon />
               </Avatar>
             </ListItemAvatar>
@@ -74,20 +74,12 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <RubyIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Ruby" />
           </ListItem>
-          {/* <ListItem>
-            <ListItemAvatar>
-              <Avatar variant="rounded">
-                <TypeScriptIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="TypeScript" />
-          </ListItem> */}
         </List>
 
         <Divider />
@@ -95,7 +87,7 @@ function Skills() {
         <List className="wrap">
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <ReactIcon />
               </Avatar>
             </ListItemAvatar>
@@ -103,7 +95,7 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <RailsIcon />
               </Avatar>
             </ListItemAvatar>
@@ -111,7 +103,7 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <ReduxIcon />
               </Avatar>
             </ListItemAvatar>
@@ -119,7 +111,7 @@ function Skills() {
           </ListItem>
           <ListItem>
             <ListItemAvatar>
-              <Avatar variant="rounded">
+              <Avatar variant="rounded" sx={{ color: theme.palette.text.primary }}>
                 <NextJsIcon />
               </Avatar>
             </ListItemAvatar>
