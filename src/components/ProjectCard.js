@@ -24,9 +24,11 @@ function ProjectCard({ info }) {
           height: "40%",
           objectFit: "contain",
           background: `linear-gradient(to top, ${theme.palette.divider}, transparent 60%)`,
-          flexGrow: 1
+          flexGrow: 1,
+          flexShrink: 1
         }} 
       />
+
       <Box 
         sx={{ 
           display: "flex", 
@@ -38,24 +40,31 @@ function ProjectCard({ info }) {
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
+
         <Typography variant="body1" color="text.secondary">
-        {description[0]}
+          {description[0]}
         </Typography>
-        <ul style={{ listStyle: "none", paddingInlineStart: 0 }}>
-          {description.length > 1 ? (
-            description[1].map((item) => (
+
+        {description.length > 1 ? (
+          <ul style={{ listStyle: "none", paddingInlineStart: 0 }}>
+            {description[1].map((item) => (
               <li style={{ display: "flex", alignItems: "flex-start" }}>
                 <span style={{ margin: "0 10px 0 0", color: theme.palette.text.secondary }}>•</span>
                 <Typography variant="body2" color="text.secondary">{item}</Typography>
               </li>
-            ))
-          ) : (
-            <></>
-          )}
-        </ul>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+            ))}
+          </ul>
+        ) : (
+          <></>
+        )}
+
+        <Box 
+          sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}
+          className="Tags"
+        >
           {tags.map((tag) => <Chip label={tag} />)}
         </Box>
+
         <Box>
           <Button 
             aria-label="github" 

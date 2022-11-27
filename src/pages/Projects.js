@@ -1,12 +1,21 @@
+import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import CatTubeProjectImage from '../images/cat-tube.jpg';
 import PicWorthyProjectImage from '../images/pic-worthy.jpg';
 import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg';
 import PokeTrackerImage from '../images/poke-tracker.jpg';
 import TicTacToeImage from '../images/tic-tac-toe.jpg';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 function Projects() {
+  const theme = useTheme()
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--bullet-bg", theme.palette.text.secondary)
+  }, [theme])
+
   const cardInfo = [{ 
     title: "CatTube", 
     description: ["This is a website for posting and commenting on cat-related videos.", ["Limited content to only pertain to cats through ActiveRecord Validations.", "Provided stored user information in the database and interaction to content through Auth.", "Utilized a Self-Join database table to allow for user-to-user interaction."]], 
@@ -54,7 +63,7 @@ function Projects() {
         sx={{ 
           position: "fixed", 
           top: "64px", 
-          height: "64px",
+          height: "42px",
           width: "100%", 
           textAlign: "center", 
           display: "flex",
@@ -64,18 +73,26 @@ function Projects() {
           backdropFilter: "blur(5px)"
         }}
       >
-        <Typography variant="h3">Projects</Typography>
+        <Typography variant="h5">Projects</Typography>
       </Box>
 
-      <Box sx={{ height: "64px" }}></Box>
+      <ReactFullpage
+        navigation
+        // navigationTooltips={["Hello", "Projects", "About Me"]}
+        render={({ state, fullpageApi }) => {
+          return (
+            // <Box sx={{ height: "64px" }}></Box>
 
-      {cardInfo.reverse().map((info) => (
-        <Box className="Slide hidden">
-          <ProjectCard 
-            info={info}
-          />
-        </Box>
-      ))}
+            cardInfo.reverse().map((info) => (
+              <Box className="section hidden">
+                <ProjectCard 
+                  info={info}
+                />
+              </Box>
+            ))
+          )
+        }}
+      />
     </Box>
   )
 }

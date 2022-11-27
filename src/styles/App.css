@@ -16,33 +16,70 @@ a {
   z-index: 2;
 } */
 
-.Content {
+/* .Content {
   margin-top: 64px;
   margin-bottom: 64px;
-}
-
-.Page {
-  height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-}
-
-/* .Swiper {
-  height: calc(100vh - 148px);
-  width: 100%;
-  z-index: 0;
 } */
 
+.Page {
+  /* height: 100%; */
+  text-align: center;
+  /* display: flex;
+  flex-direction: column; */
+  /* gap: 64px; */
+}
+
 .Slide {
-  min-height: calc(100vh - 128px);
+  /* min-height: calc(100vh - 128px); */
+  /* min-height: calc(100vh - 64px); */
+  /* min-height: 100vh; */
+  /* height: 100vh; */
+  /* width: 100%;
   margin: auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 0; */
+}
+
+.section {
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: auto 0;
   z-index: 0;
+}
+
+.fp-overflow {
+  width: 100%;
+  padding: 20px 0;
+}
+
+#fp-nav ul li {
+  margin: 10px;
+  padding: 0.575em 0;
+}
+
+#fp-nav ul li a span {
+  background: var(--bullet-bg)
+}
+
+#fp-nav ul li .fp-tooltip {
+  top: -0.575em;
+  color: var(--tooltip-color);
+}
+
+.fp-tooltip {
+  border-radius: 5em;
+  text-transform: uppercase;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 0.575em 1.5em;
+  background-color: var(--tooltip-bg);
+}
+
+.fp-watermark {
+  display: none;
 }
 
 .Logo img {
@@ -57,7 +94,8 @@ a {
 
 .Card {
   overflow: hidden;
-  /* min-height: calc(100vh - 268px); */
+  min-height: calc(100vh - 268px);
+  max-height: calc(100vh - 212px);
   width: 80%;
   max-width: 800px;
   text-align: left; 
@@ -100,14 +138,6 @@ a {
   width: fit-content;
 }
 
-/* .dark .swiper-scrollbar {
-  background-color: rgba(255,255,255,0.1);
-}
-
-.dark .swiper-scrollbar-drag {
-  background-color: rgba(255,255,255,0.5);
-} */
-
 .wrap .span {
   margin: auto 10px;
 }
@@ -125,6 +155,12 @@ a {
   }
 }
 
+@media (max-width: 400px) {
+  .Card ul {
+    display: none;
+  }
+}
+
 @media (max-height: 450px) {
   .Avatar span {
     display: none;
@@ -136,6 +172,21 @@ a {
 
 @media (max-height: 500px) {
   .project-image {
+    display: none;
+  }
+  .Card p {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .Card .Tags {
+    display: none;
+  }
+}
+
+@media (max-height: 750px) {
+  .Card ul {
     display: none;
   }
 }

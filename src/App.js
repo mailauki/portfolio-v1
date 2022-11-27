@@ -8,6 +8,7 @@ import './styles/WaveEmoji.css';
 import './styles/SlideIn.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+// import ReactFullpage from '@fullpage/react-fullpage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
