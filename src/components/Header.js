@@ -39,7 +39,6 @@ function Header({ darkMode, handleDarkMode }) {
           top: 0,
           zIndex: 2,
         }}
-        // className="Header"
       >
         <Box 
         className="Logo"
