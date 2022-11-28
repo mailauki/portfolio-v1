@@ -6,10 +6,28 @@ a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 42px;
-  /* margin-top: 64px; */
-  margin-top: 106px;
-  margin-bottom: 64px;
+  gap: 64px;
+  margin: 114px 20px 64px 20px;
+}
+
+.SubHeader {
+  position: fixed; 
+  top: 64px; 
+  height: 50px;
+  width: 100%; 
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.Swiper {
+  height: calc(100vh - 148px);
+  width: 100%;
+  margin-top: 64px;
+  z-index: 0;
 }
 
 .section {
@@ -17,6 +35,24 @@ a {
   max-height: 100vh;
   margin: auto 0;
   z-index: 0;
+}
+
+.Slide {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.dark .swiper-scrollbar {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.dark .swiper-scrollbar-drag {
+  background-color: rgba(255,255,255,0.5);
 }
 
 .Logo img {
@@ -45,8 +81,7 @@ a {
 }
 
 .Panels {
-  padding-top: 20px;
-  margin: 20px;
+  margin-top: 84px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -116,7 +151,7 @@ a {
   }
 }
 
-@media (max-height: 600px) {
+/* @media (max-height: 600px) {
   .Card .Tags {
     display: none;
   }
@@ -126,4 +161,4 @@ a {
   .Card ul {
     display: none;
   }
-}
+} */

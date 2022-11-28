@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -7,14 +6,9 @@ import PicWorthyProjectImage from '../images/pic-worthy.jpg';
 import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg';
 import PokeTrackerImage from '../images/poke-tracker.jpg';
 import TicTacToeImage from '../images/tic-tac-toe.jpg';
-import ReactFullpage from '@fullpage/react-fullpage';
 
 function Projects() {
   const theme = useTheme()
-
-  useEffect(() => {
-    document.documentElement.style.setProperty("--bullet-bg", theme.palette.text.secondary)
-  }, [theme])
 
   const cardInfo = [{ 
     title: "CatTube", 
@@ -53,41 +47,17 @@ function Projects() {
   }]
 
   return (
-    <Box className="Page">
-      <Box 
-        sx={{ 
-          position: "fixed", 
-          top: "64px", 
-          height: "42px",
-          width: "100%", 
-          textAlign: "center", 
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center", 
-          zIndex: 1, 
-          backdropFilter: "blur(5px)"
-        }}
-      >
-        <Typography variant="h5">Projects</Typography>
+    <>
+      <Box className="SubHeader">
+        <Typography variant="h4">Projects</Typography>
       </Box>
-
-      <ReactFullpage
-        navigation
-        render={({ state, fullpageApi }) => {
-          return (
-            // <Box sx={{ height: "64px" }}></Box>
-
-            cardInfo.reverse().map((info) => (
-              <Box className="section hidden">
-                <ProjectCard 
-                  info={info}
-                />
-              </Box>
-            ))
-          )
-        }}
-      />
-    </Box>
+      
+      <Box className="Page">
+        {cardInfo.reverse().map((info) => (
+          <ProjectCard info={info} key={info.title} />
+        ))}
+      </Box>
+    </>
   )
 }
 export default Projects;

@@ -11,9 +11,7 @@ function ProjectCard({ info }) {
   return (
     <Box 
       className="Card"
-      sx={{ 
-        backgroundColor: theme.palette.mode === "dark" ? "rgba(60,60,60,0.3)" : "rgba(225,225,225,0.3)"
-      }}
+      sx={{ backgroundColor: theme.palette.box }}
     >
       <img 
         src={image ? image : `https://via.placeholder.com/310x200?text=${title}`} 
@@ -49,7 +47,7 @@ function ProjectCard({ info }) {
         {description.length > 1 ? (
           <ul style={{ listStyle: "none", paddingInlineStart: 0 }}>
             {description[1].map((item) => (
-              <li style={{ display: "flex", alignItems: "flex-start" }}>
+              <li key={item} style={{ display: "flex", alignItems: "flex-start" }}>
                 <span style={{ margin: "0 10px 0 0", color: theme.palette.text.secondary }}>•</span>
                 <Typography variant="body2" color="text.secondary">{item}</Typography>
               </li>
@@ -64,55 +62,36 @@ function ProjectCard({ info }) {
             sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}
             className="Tags"
           >
-            {tags.map((tag) => <Chip label={tag} />)}
+            {tags.map((tag) => <Chip key={tag} label={tag} />)}
           </Box>
         ) : (
           <></>
         )}
 
         <Box>
-          {/* <Button 
-            aria-label="github" 
-            component="a" href={githubLink} target="_blank"
-            startIcon={<GitHubIcon />}
-            sx={{ mr: 1 }}
-          >
-            GitHub
-          </Button> */}
-          
           {!githubLink ? (
             <></>
           ) : (
-          <Button 
-            aria-label="visit-site" 
-            component="a" href={githubLink} target="_blank"
-            startIcon={<GitHubIcon />}
-            sx={{ mr: 1 }}
-          >
-            GitHub
-          </Button>
+            <Button 
+              aria-label="visit-site" 
+              component="a" href={githubLink} target="_blank"
+              startIcon={<GitHubIcon />}
+              sx={{ mr: 1 }}
+            >
+              GitHub
+            </Button>
           )}
-          {/* {!deployLink ? (
-            <></>
-          ) : (
-          <Button 
-            aria-label="visit-site" 
-            component="a" href={deployLink} target="_blank"
-            startIcon={<OpenIcon />}
-          >
-            Visit Site
-          </Button>
-          )} */}
+
           {!demoLink ? (
             <></>
           ) : (
-          <Button 
-            aria-label="visit-site" 
-            component="a" href={demoLink} target="_blank"
-            startIcon={<OpenIcon />}
-          >
-            Visit Site
-          </Button>
+            <Button 
+              aria-label="visit-site" 
+              component="a" href={demoLink} target="_blank"
+              startIcon={<OpenIcon />}
+            >
+              Visit Site
+            </Button>
           )}
         </Box>
       </Box>

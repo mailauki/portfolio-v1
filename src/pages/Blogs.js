@@ -34,25 +34,14 @@ function Blogs() {
 
   return (
     <>
-      <Box 
-        sx={{ 
-          position: "fixed", 
-          top: "64px", 
-          height: "42px",
-          width: "100%", 
-          textAlign: "center", 
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center", 
-          zIndex: 1, 
-          backdropFilter: "blur(5px)"
-        }}
-      >
-        <Typography variant="h5">Blogs</Typography>
+      <Box className="SubHeader">
+        <Typography variant="h4">Blogs</Typography>
       </Box>
 
       <Box className="Page">
-        {cardInfo.reverse().map((info) => <ProjectCard info={info} key={info.title} />)}
+        {cardInfo.reverse().map((info) => (
+          <ProjectCard info={info} key={info.title} />
+        ))}
       </Box>
     </>
   )

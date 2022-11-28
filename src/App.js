@@ -21,7 +21,7 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: "light",
-      box: "rgba(225,225,225,0.3)",
+      box: "rgba(225,225,225,0.4)",
       secondary: {
         main: "#E1A100",
         light: "#E7B333",
@@ -33,7 +33,7 @@ function App() {
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
-      box: "rgba(60,60,60,0.3)",
+      box: "rgba(60,60,60,0.4)",
       secondary: {
         main: "#E4B828",
         light: "#E9C653",
