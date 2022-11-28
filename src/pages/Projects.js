@@ -26,7 +26,7 @@ function Projects() {
   },
   { 
     title: "Le Banque du Porcine", 
-    description: ["This is a website for viewing balances and wish-list items, with progress bars calculated based on both.", ["Created minimalistic NextJs Application using Supabase for the database API.", "Utilized nested routes to personalize data shown limited to the logged-in user.", "Stored data with integrations interconnecting them to each other, such as having an item only exist if there is a user."]], 
+    description: ["This is a website for viewing balances and wish-list items, with progress bars calculated based on both.", ["Created minimalistic Next JS Application using Supabase for the database API.", "Utilized nested routes to personalize data shown limited to the logged-in user.", "Stored data with integrations interconnecting them to each other, such as having an item only exist if there is a user."]], 
     image: LeBanqueDuPorcineImage,  
     links: {githubLink: "https://github.com/mailauki/le-banque-du-porcine-version-2", demoLink: "https://le-banque-du-porcine.netlify.app"},
     tags: ["Next JS", "Redux", "Netlify", "Supabase", "Material UI", "Swiper JS"] 

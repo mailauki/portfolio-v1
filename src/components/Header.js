@@ -23,31 +23,21 @@ function Header({ darkMode, handleDarkMode }) {
   return (
     <>
       <Box 
+        className="Header"
         sx={{
           borderBottom: 1,
           borderColor: "divider",
           backgroundColor: "background.paper",
-          height: "64px",
-          width: "100%",
-          margin: 0,
-          padding: "0 20px",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "fixed",
-          top: 0,
-          zIndex: 2,
         }}
       >
         <Box 
-        className="Logo"
           sx={{ 
             display: "flex", 
             alignItems: "center", 
             "&:hover": {
               color: "primary.main"
-            }
+            },
+            cursor: "pointer"
           }}
         >
           <span style={{ marginLeft: "-10px", marginRight: "-22px" }}>

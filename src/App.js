@@ -6,9 +6,9 @@ import './styles/App.css';
 import './styles/Background.css';
 import './styles/WaveEmoji.css';
 import './styles/SlideIn.css';
-import './styles/fullpage.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Box, Typography } from '@mui/material';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -62,10 +62,15 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <CssBaseline />
-      <div className="App">
+      <Box className="App">
         <Header darkMode={darkMode} handleDarkMode={handleDarkMode} />
+
         <Content />
-      </div>
+
+        <Box className="Footer">
+          <Typography variant="body1" color="text.secondary">❤ Julie Evans</Typography>
+        </Box>
+      </Box>
     </ThemeProvider>
   );
 }
