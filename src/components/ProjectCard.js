@@ -4,7 +4,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenIcon from '@mui/icons-material/OpenInNew';
 
 function ProjectCard({ info }) {
-  const { title, description, image, githubLink, deployLink, links, tags } = info
+  const { title, description, image, links, tags } = info
+  const { githubLink, demoLink } = links
   const theme = useTheme()
 
   return (
@@ -58,28 +59,56 @@ function ProjectCard({ info }) {
           <></>
         )}
 
-        <Box 
-          sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}
-          className="Tags"
-        >
-          {tags.map((tag) => <Chip label={tag} />)}
-        </Box>
+        {tags ? (
+          <Box 
+            sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}
+            className="Tags"
+          >
+            {tags.map((tag) => <Chip label={tag} />)}
+          </Box>
+        ) : (
+          <></>
+        )}
 
         <Box>
-          <Button 
+          {/* <Button 
             aria-label="github" 
             component="a" href={githubLink} target="_blank"
             startIcon={<GitHubIcon />}
             sx={{ mr: 1 }}
           >
             GitHub
+          </Button> */}
+          
+          {!githubLink ? (
+            <></>
+          ) : (
+          <Button 
+            aria-label="visit-site" 
+            component="a" href={githubLink} target="_blank"
+            startIcon={<GitHubIcon />}
+            sx={{ mr: 1 }}
+          >
+            GitHub
           </Button>
-          {!deployLink ? (
+          )}
+          {/* {!deployLink ? (
             <></>
           ) : (
           <Button 
             aria-label="visit-site" 
             component="a" href={deployLink} target="_blank"
+            startIcon={<OpenIcon />}
+          >
+            Visit Site
+          </Button>
+          )} */}
+          {!demoLink ? (
+            <></>
+          ) : (
+          <Button 
+            aria-label="visit-site" 
+            component="a" href={demoLink} target="_blank"
             startIcon={<OpenIcon />}
           >
             Visit Site

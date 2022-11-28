@@ -4,6 +4,12 @@ a {
 
 .Page {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  /* margin-top: 64px; */
+  margin-top: 106px;
+  margin-bottom: 64px;
 }
 
 .section {

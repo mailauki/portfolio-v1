@@ -74,6 +74,7 @@ function Menu({ open, handleDrawerClose }) {
             <ListItemText primary="Home" />
           </ListItemButton>
         </ListItem>
+
         <ListItem disablePadding>
           <ListItemButton
             component={Link}
@@ -93,6 +94,27 @@ function Menu({ open, handleDrawerClose }) {
             <ListItemText primary="Projects" />
           </ListItemButton>
         </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            component={Link}
+            to="/blogs"
+            onClick={handleDrawerClose} 
+            sx={{
+              color: location.pathname === "/blogs" ? "secondary.main" : ""
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                color: location.pathname === "/blogs" ? "secondary.main" : ""
+              }}
+            >
+              <DevIcon />
+            </ListItemIcon>
+            <ListItemText primary="Blogs" />
+          </ListItemButton>
+        </ListItem>
+
         <ListItem disablePadding>
           <ListItemButton
             component={Link}
