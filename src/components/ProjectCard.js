@@ -10,7 +10,7 @@ function ProjectCard({ info }) {
 
   return (
     <Box 
-      className="Card"
+      className="Card hidden"
       sx={{ backgroundColor: theme.palette.box }}
     >
       <img 

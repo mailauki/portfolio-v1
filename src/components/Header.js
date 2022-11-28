@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from './Menu';
-import { IconButton, Typography, Box, Tooltip, SvgIcon } from '@mui/material';
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { IconButton, Typography, Box, Tooltip } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -10,11 +10,11 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 function Header({ darkMode, handleDarkMode }) {
   const [open, setOpen] = useState(false)
 
-  const handleDrawerOpen = () => {
+  function handleDrawerOpen() {
     setOpen(true)
   }
 
-  const handleDrawerClose = () => {
+  function handleDrawerClose() {
     setOpen(false)
   }
   
@@ -34,11 +34,13 @@ function Header({ darkMode, handleDarkMode }) {
           sx={{ 
             display: "flex", 
             alignItems: "center", 
+            color: "inherit",
             "&:hover": {
               color: "primary.main"
             },
             cursor: "pointer"
           }}
+          component={Link} to="/"
         >
           <span style={{ marginLeft: "-10px", marginRight: "-22px" }}>
             <svg width="60px" height="60px" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
@@ -50,8 +52,6 @@ function Header({ darkMode, handleDarkMode }) {
           <Typography 
             variant="h6" 
             noWrap
-            component={Link} to="/"
-            color="inherit"
           >
             ulie
           </Typography>
@@ -66,26 +66,10 @@ function Header({ darkMode, handleDarkMode }) {
           <Typography 
             variant="h6" 
             noWrap 
-            component={Link} to="/"
-            color="inherit"
           >
             vans
           </Typography>
         </Box>
-
-        {/* <Typography 
-          variant="h6" 
-          noWrap  
-          sx={{ 
-            "&:hover": {
-              color: "primary.main"
-            }
-          }}
-          component={Link} to="/"
-          color="inherit"
-        >
-          Julie Evans
-        </Typography> */}
         
         <Box>
           <Tooltip title={`${theme.palette.mode === "dark" ? "Light" : "Dark"} Mode`} arrow>

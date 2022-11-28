@@ -8,7 +8,8 @@ import './styles/WaveEmoji.css';
 import './styles/SlideIn.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -68,7 +69,18 @@ function App() {
         <Content />
 
         <Box className="Footer">
-          <Typography variant="body1" color="text.secondary">❤ Julie Evans</Typography>
+          <Button 
+            startIcon={<FavoriteIcon />}
+            sx={{ 
+              color: "text.secondary", 
+              pointerEvents: "none", 
+              textTransform: "none"
+            }}
+          >
+            <Typography variant="body1">
+              Julie Evans
+            </Typography>
+          </Button>
         </Box>
       </Box>
     </ThemeProvider>

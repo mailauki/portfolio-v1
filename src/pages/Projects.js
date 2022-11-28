@@ -1,6 +1,5 @@
 import ProjectCard from '../components/ProjectCard';
 import { Box, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import CatTubeProjectImage from '../images/cat-tube.jpg';
 import PicWorthyProjectImage from '../images/pic-worthy.jpg';
 import LeBanqueDuPorcineImage from '../images/le-banque-du-porcine.jpg';
@@ -8,8 +7,6 @@ import PokeTrackerImage from '../images/poke-tracker.jpg';
 import TicTacToeImage from '../images/tic-tac-toe.jpg';
 
 function Projects() {
-  const theme = useTheme()
-
   const cardInfo = [{ 
     title: "CatTube", 
     description: ["This is a website for posting and commenting on cat-related videos.", ["Limited content to only pertain to cats through ActiveRecord Validations.", "Provided stored user information in the database and interaction to content through Auth.", "Utilized a Self-Join database table to allow for user-to-user interaction."]], 

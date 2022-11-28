@@ -3,13 +3,13 @@ import { List, ListItem, ListItemAvatar, ListItemText, Avatar, Typography, Divid
 import { useTheme } from '@mui/material/styles';
 import HtmlIcon from '@mui/icons-material/Html';
 import CssIcon from '@mui/icons-material/Css';
-import JavascriptIcon from '@mui/icons-material/Javascript';
-import CodeIcon from '@mui/icons-material/Code';
+// import JavascriptIcon from '@mui/icons-material/Javascript';
+// import CodeIcon from '@mui/icons-material/Code';
 import JavaScriptIcon from './icons/JavaScriptIcon';
 import RubyIcon from './icons/RubyIcon';
 import ReactIcon from './icons/ReactIcon';
 import RailsIcon from './icons/RailsIcon';
-import TypeScriptIcon from './icons/TypeScriptIcon';
+// import TypeScriptIcon from './icons/TypeScriptIcon';
 import ReduxIcon from './icons/ReduxIcon';
 import NextJsIcon from './icons/NextJsIcon';
 
