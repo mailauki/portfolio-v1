@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenIcon from '@mui/icons-material/OpenInNew';
 
 function ProjectCard({ info }) {
-  const { title, description, image, links, tags } = info
+  const { id, title, description, image, links, tags } = info
   const { githubLink, demoLink } = links
   const theme = useTheme()
 
@@ -35,6 +35,8 @@ function ProjectCard({ info }) {
           gap: 1, 
           padding: "10px"
         }}
+        component="a"
+        href={`/projects/${id}`}
       >
         <Typography gutterBottom variant="h5" component="div">
           {title}
